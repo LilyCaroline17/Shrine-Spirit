@@ -23,7 +23,7 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseDown() //Save original position of the item if the item can still be dragged
     {
         if (canBeDragged)
-        {
+        { 
             IsDragged = true;
             originalPosition = transform.localPosition;
             mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -47,7 +47,12 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseUp()
     {
         IsDragged = false;
-        dragEndedCallback(this);
+        //Debug.Log(this);
+        DragAndDrop that = this;
+        if (this != null)
+        {
+            dragEndedCallback(that);
+        }
 
         if (canBeDragged)
         {
