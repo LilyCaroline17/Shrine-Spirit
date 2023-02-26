@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PeopleSpawnerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Visitor;
+    public bool shouldSpawn = true;
 
-    // Update is called once per frame
+    // Start is called before the first frame update
+    //void Start()
+    //{
+    //    spawnVisitor();
+    //}
+
+
     void Update()
     {
-        
+        if (shouldSpawn) { spawnVisitor(); shouldSpawn = false; }
+    }
+
+    void spawnVisitor()
+    {
+        Instantiate(Visitor, transform.position, transform.rotation);
     }
 }
