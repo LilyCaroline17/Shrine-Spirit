@@ -193,17 +193,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4110565226770193714, guid: 4786881e253814c28bfe5414321893c9, type: 3}
   m_PrefabInstance: {fileID: 1742741009}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &421252684 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4110565226770193713, guid: 4786881e253814c28bfe5414321893c9, type: 3}
-  m_PrefabInstance: {fileID: 1742741009}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421252682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ae8af110f87a4ae9a70ebf9d153dae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &508768512
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,17 +347,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &730514329 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4110565226770193713, guid: 4786881e253814c28bfe5414321893c9, type: 3}
-  m_PrefabInstance: {fileID: 1981630932}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ae8af110f87a4ae9a70ebf9d153dae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &911216044
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,17 +531,6 @@ MonoBehaviour:
   snapPoints: []
   draggableObjects: []
   snapRange: 0.5
---- !u!114 &1291672721 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4110565226770193713, guid: 4786881e253814c28bfe5414321893c9, type: 3}
-  m_PrefabInstance: {fileID: 54045028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ae8af110f87a4ae9a70ebf9d153dae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1581825287
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +749,6 @@ GameObject:
   - component: {fileID: 1935828516}
   - component: {fileID: 1935828515}
   - component: {fileID: 1935828514}
-  - component: {fileID: 1935828517}
   m_Layer: 0
   m_Name: temp_sprite
   m_TagString: Untagged
@@ -871,25 +837,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1935828517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935828513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d21a9db6aad54de6870ac85f34d190f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapPoints:
-  - {fileID: 1935828516}
-  draggableObjects:
-  - {fileID: 730514329}
-  - {fileID: 1291672721}
-  - {fileID: 421252684}
-  snapRange: 40
 --- !u!1001 &1981630932
 PrefabInstance:
   m_ObjectHideFlags: 0

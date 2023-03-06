@@ -11,10 +11,17 @@ public class SnapController : MonoBehaviour
     //Don't fully understand this code, but it is what has the object snap to place
     void Start()
     {
+        //adding the DragAndDrop script of objects with tag token to the draggable object list
+        foreach (GameObject token in GameObject.FindGameObjectsWithTag("token"))
+        {
+            draggableObjects.Add(token.GetComponent<DragAndDrop>());
+        }
+
         foreach (DragAndDrop draggable in draggableObjects)
         {
             draggable.dragEndedCallback = OnDragEnded;
         }
+
     }
 
     private void OnDragEnded(DragAndDrop draggable)
