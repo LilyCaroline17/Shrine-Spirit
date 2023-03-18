@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1606799277979545284}
   - component: {fileID: 1606799277979545285}
   - component: {fileID: 1606799277979545286}
+  - component: {fileID: -3610697590554234012}
   m_Layer: 0
   m_Name: Visitor
   m_TagString: Untagged
@@ -102,3 +103,19 @@ MonoBehaviour:
   deadZone: -100
   prayZone: -10
   VisitorSpawner: {fileID: 7179602061676493457, guid: 508cb294245d741679cbb92187430016, type: 3}
+--- !u!114 &-3610697590554234012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606799277979545287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d21a9db6aad54de6870ac85f34d190f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapPoints:
+  - {fileID: 1606799277979545284}
+  draggableObjects: []
+  snapRange: 40
