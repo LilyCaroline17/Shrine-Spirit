@@ -12,7 +12,7 @@ public class DragAndDrop : MonoBehaviour
 
 
     private bool IsDragged = false;
-    private Vector3 originalPosition;
+    public Vector3 originalPosition;
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
 
