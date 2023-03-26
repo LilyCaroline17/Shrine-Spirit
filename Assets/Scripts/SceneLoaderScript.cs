@@ -5,26 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderScript : MonoBehaviour
 {
-    public GameObject morning_background;
-    public GameObject afternoon_background;
-    public float daytimelength = 10;
-    private float timer = 0;
-    public bool isMorning = true;
+    //public GameObject morning_background;
+    //public GameObject afternoon_background;
+    //public float daytimelength = 10;
+    //private float timer = 0;
+    //public bool isMorning = true;
 
-    public void Start()
+    public int numOfVisitors;
+
+    Animator animator;
+
+    void Start()
     {
-
+        animator = GetComponent<Animator>();
+        numOfVisitors = 0;
     }
 
     public void Update()
     {
-        if (timer < daytimelength)
-        { timer += Time.deltaTime; }
-        else
-        {
-            ChangeBackground();
-            timer = 0;
-        }
+        //if (timer < daytimelength)
+        //{ timer += Time.deltaTime; }
+        //else
+        //{
+        //    ChangeBackground();
+        //    timer = 0;
+        //}
+        animator.SetInteger("NumberOfVisitors",numOfVisitors);
     }
 
     public void LoadNextScene()
@@ -39,11 +45,11 @@ public class SceneLoaderScript : MonoBehaviour
     }
 
 
-    public void ChangeBackground()
-    {
-        //add in animations to transition between morning and afternoon
-        morning_background.SetActive(isMorning);
-        afternoon_background.SetActive(!isMorning);
-        isMorning=!isMorning;
-    }
+    //public void ChangeBackground()
+    //{
+    //    //add in animations to transition between morning and afternoon
+    //    morning_background.SetActive(isMorning);
+    //    afternoon_background.SetActive(!isMorning);
+    //    isMorning=!isMorning;
+    //}
 }
