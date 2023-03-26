@@ -10,12 +10,14 @@ public class VisitorScript : MonoBehaviour
     public float prayZone=-20; //this could be changed later to the hit box location of the tokens
     public PeopleSpawnerScript VisitorSpawner;
     public GameObject recievedToken;
+    public GameObject backgroundAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         action = "going";
         VisitorSpawner = GameObject.FindGameObjectWithTag("spawner").GetComponent<PeopleSpawnerScript>();
+        backgroundAnimator = GameObject.FindGameObjectWithTag("Animator");
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class VisitorScript : MonoBehaviour
                 VisitorSpawner.shouldSpawn = true;
                 recievedToken.SetActive(true);
                 //Instantiate(recievedToken, tokenloc, transform.rotation);
+                backgroundAnimator.GetComponent<SceneLoaderScript>().numOfVisitors++;
                 Destroy(gameObject);
             }
         }
