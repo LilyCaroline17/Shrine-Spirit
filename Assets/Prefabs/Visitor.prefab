@@ -95,14 +95,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1606799277979545287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211ada0c5547942eb992319155c7649d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e001ae58f1eb499093ab256d9ad0dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   action: 
   moveSpeed: 10
   deadZone: -100
-  prayZone: -10
-  VisitorSpawner: {fileID: 7179602061676493457, guid: 508cb294245d741679cbb92187430016, type: 3}
+  prayZone: -20
+  VisitorSpawner: {fileID: 0}
+  recievedToken: {fileID: 0}
+  backgroundAnimator: {fileID: 0}
 --- !u!114 &-3610697590554234012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,5 +119,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoints:
   - {fileID: 1606799277979545284}
-  draggableObjects: []
   snapRange: 40
