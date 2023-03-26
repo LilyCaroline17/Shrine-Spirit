@@ -12,14 +12,20 @@ public class DragAndDrop : MonoBehaviour
 
 
     private bool IsDragged = false;
-    public Vector3 originalPosition;
+    public Vector3 startingPosition;
+    private Vector3 originalPosition;
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
 
     public float delay; //Decides how long to wait before item disappears
     public bool canBeDragged = true;
     public GameObject prefab;
-    
+
+    void Start()
+    {
+        startingPosition = transform.localPosition;
+    }
+
     private void OnMouseDown() //Save original position of the item if the item can still be dragged
     {
         if (canBeDragged)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SnapController : MonoBehaviour
 { 
     public List<Transform> snapPoints;
-    public List<DragAndDrop> draggableObjects;
+    //public List<GameObject> draggableObjects;
     public float snapRange = 0.5f;
 
     //Don't fully understand this code, but it is what has the object snap to place
@@ -14,13 +14,9 @@ public class SnapController : MonoBehaviour
         //adding the DragAndDrop script of objects with tag token to the draggable object list
         foreach (GameObject token in GameObject.FindGameObjectsWithTag("token"))
         {
-            draggableObjects.Add(token.GetComponent<DragAndDrop>());
+            token.GetComponent<DragAndDrop>().dragEndedCallback = OnDragEnded;
         }
-
-        foreach (DragAndDrop draggable in draggableObjects)
-        {
-            draggable.dragEndedCallback = OnDragEnded;
-        }
+        
 
     }
 
@@ -28,8 +24,9 @@ public class SnapController : MonoBehaviour
     {
         float closestDistance = -1;
         Transform closestSnapPoint = null;
+        VisitorScript visitor = GetComponent<VisitorScript>();
 
-        foreach(Transform snapPoint in snapPoints)
+        foreach (Transform snapPoint in snapPoints)
         {
             float currentDistance = Vector2.Distance(draggable.transform.localPosition, snapPoint.localPosition);
             if (closestSnapPoint == null || currentDistance < closestDistance)
@@ -39,13 +36,18 @@ public class SnapController : MonoBehaviour
             }
         }
 
-        if(closestSnapPoint != null && closestDistance <= snapRange)
+        
+        if (closestSnapPoint != null && closestDistance <= snapRange && visitor.action == "praying")
         {
             draggable.transform.localPosition = closestSnapPoint.localPosition;
             draggable.canBeDragged = false;
-            VisitorScript visitor = GetComponent<VisitorScript>();
-            visitor.recievedToken = GameObject.FindGameObjectsWithTag("token")[snapPoints.IndexOf(closestSnapPoint)];
-            visitor.tokenloc = visitor.recievedToken.GetComponent<DragAndDrop>().originalPosition;
+
+            //makes copy of the given token in starting position
+            GameObject newToken = Instantiate(draggable.gameObject, draggable.startingPosition, transform.rotation);
+            newToken.GetComponent<DragAndDrop>().canBeDragged = true; //setting the draggability to true again
+            newToken.SetActive(false); 
+
+            visitor.recievedToken = newToken;
             visitor.action = "leaving";
         }
     }
