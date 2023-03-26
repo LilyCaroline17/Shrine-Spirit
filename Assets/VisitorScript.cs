@@ -10,7 +10,6 @@ public class VisitorScript : MonoBehaviour
     public float prayZone=-20; //this could be changed later to the hit box location of the tokens
     public PeopleSpawnerScript VisitorSpawner;
     public GameObject recievedToken;
-    public Vector3 tokenloc;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +35,8 @@ public class VisitorScript : MonoBehaviour
             if (transform.position.y < deadZone)
             {
                 VisitorSpawner.shouldSpawn = true;
-                Instantiate(recievedToken, tokenloc, transform.rotation);
+                recievedToken.SetActive(true);
+                //Instantiate(recievedToken, tokenloc, transform.rotation);
                 Destroy(gameObject);
             }
         }
