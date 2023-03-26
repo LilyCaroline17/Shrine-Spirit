@@ -43,6 +43,10 @@ public class SnapController : MonoBehaviour
         {
             draggable.transform.localPosition = closestSnapPoint.localPosition;
             draggable.canBeDragged = false;
+            VisitorScript visitor = GetComponent<VisitorScript>();
+            visitor.recievedToken = GameObject.FindGameObjectsWithTag("token")[snapPoints.IndexOf(closestSnapPoint)];
+            visitor.tokenloc = visitor.recievedToken.GetComponent<DragAndDrop>().originalPosition;
+            visitor.action = "leaving";
         }
     }
 }
