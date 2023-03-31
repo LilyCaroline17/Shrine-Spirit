@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 public class EnemyScript : MonoBehaviour
 {
     
-    public float speed = 20.0f;
+    public float speed = 40.0f;
     private float randSpeed;
     private Vector2 target;
     private Vector2 position;
-    public bool isClicked = false;
+    public bool isClicked;
   
 
     void Start()
@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         int randNum = Random.Range(1, 5);
-        Vector2 spawnPos = transform.position;
+        Vector2 spawnPos = new Vector2(0.0f, 0.0f);
         if (randNum == 1) { spawnPos = new Vector2(-125, Random.Range(-100, 80)); }
         if (randNum == 2) { spawnPos = new Vector2(Random.Range(-120, 115), -100); }
         if (randNum == 3) { spawnPos = new Vector2(115, Random.Range(-100, 80)); }
@@ -42,13 +42,28 @@ public class EnemyScript : MonoBehaviour
         if (isClicked)
         {
             randSpeed = Random.Range(speed - 10, speed + 10);
-            transform.position = Vector2.MoveTowards(spawnPos, target, step);
-            isClicked = false;
+            transform.position = Vector2.MoveTowards(transform.position, position, 50.0f * Time.deltaTime);
+            
+            if (transform.position.x > -125 && transform.position.x < 155 && transform.position.y > -100 && transform.position.x < 80)
+            {
+                isClicked = true;
+                
+            }
+            else
+            {
+                isClicked = false;
+                transform.position = spawnPos;
+                position = transform.position;
+            }
+
         }
          // move sprite towards the target location
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, step);
+            if(isClicked == false)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target, step);
+            }
         }
        
 
