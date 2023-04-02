@@ -33,13 +33,12 @@ public class SceneLoaderScript : MonoBehaviour
         animator.SetInteger("NumberOfVisitors",numOfVisitors);
     }
 
-    public void LoadNextScene()
+    public void LoadNightScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene((currentSceneIndex + 1)% SceneManager.sceneCount);
+        SceneManager.LoadScene(1);
     }
 
-    public void LoadStartScene()
+    public void LoadDayScene()
     {
         SceneManager.LoadScene(0);
     }
