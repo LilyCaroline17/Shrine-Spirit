@@ -297,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215616, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -103.8
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215616, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -337,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215618, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: rock_spirit
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215619, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_Sprite
@@ -399,7 +399,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &486298455
 SpriteRenderer:
@@ -534,6 +534,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1303306334}
   - {fileID: 486298454}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -547,7 +548,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 668452830}
-  - component: {fileID: 668452831}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -639,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215618, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_Name
-      value: Enemy (3)
+      value: plant_ghost
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215619, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_Sprite
@@ -939,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215618, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: bird_spirit
       objectReference: {fileID: 0}
     - target: {fileID: 4017029528779215619, guid: d1e76f3baf3c546cdb2bfdbfbc97a7c5, type: 3}
       propertyPath: m_Sprite
