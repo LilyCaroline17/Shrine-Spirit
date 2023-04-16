@@ -11,6 +11,7 @@ public class VisitorScript : MonoBehaviour
     public PeopleSpawnerScript VisitorSpawner;
     public GameObject recievedToken;
     public GameObject backgroundAnimator;
+    public DialogueTrigger trigger;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,9 @@ public class VisitorScript : MonoBehaviour
         action = "going";
         VisitorSpawner = GameObject.FindGameObjectWithTag("spawner").GetComponent<PeopleSpawnerScript>();
         backgroundAnimator = GameObject.FindGameObjectWithTag("Animator");
+
+        trigger = GetComponent<DialogueTrigger>();
+        trigger.TriggerDialogue(); //Dialogue should trigger as soon as visitor is created 
     }
 
     // Update is called once per frame
@@ -34,6 +38,7 @@ public class VisitorScript : MonoBehaviour
         if (leaving)
         {
             transform.position = transform.position + (Vector3.down * moveSpeed) * Time.deltaTime;
+
             if (transform.position.y < deadZone)
             {
                 VisitorSpawner.shouldSpawn = true;
