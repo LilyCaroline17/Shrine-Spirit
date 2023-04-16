@@ -8,6 +8,11 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
+        GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueManager>().StartDialogue(dialogue);
+        //Debug.Log(FindObjectOfType<DialogueManager>().dialogueText!=null);
+        //Debug.Log("------------");
+        //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        //GetComponent<DialogueManager>().StartDialogue(dialogue);
     }
 }

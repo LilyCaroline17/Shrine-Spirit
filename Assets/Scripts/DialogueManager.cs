@@ -14,13 +14,15 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        //sentences = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("Starting conversation with" + dialogue.visitor);
 
+        Debug.Log(sentences==null);
+        if (sentences==null) sentences= new Queue<string>();
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -34,9 +36,12 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+
+        Debug.Log(sentences == null);
         if (sentences.Count == 0)
         {
             EndDialogue();
+            Debug.Log("ended");
             return;
         }
 
