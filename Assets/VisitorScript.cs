@@ -12,20 +12,35 @@ public class VisitorScript : MonoBehaviour
     public GameObject recievedToken;
     public GameObject backgroundAnimator;
 
+    public GameObject[] visitors;
+    public GameObject currentVisitor;
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         action = "going";
         VisitorSpawner = GameObject.FindGameObjectWithTag("spawner").GetComponent<PeopleSpawnerScript>();
         backgroundAnimator = GameObject.FindGameObjectWithTag("Animator");
+
+        int index = Random.Range(0, visitors.Length-1);
+        currentVisitor = visitors[index];
+        animator = currentVisitor.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (action.Equals("going")) Moving(false);
-        if (action.Equals("leaving")) Moving(true);
-        //if (action.Equals("praying"))
+        if (action.Equals("leaving"))
+        {
+            animator.SetTrigger("WalkAway");
+            Moving(true);
+        }
+        if (action.Equals("praying"))
+        {
+            animator.SetTrigger("Standing");
+        }
         // play animation of prayer, display dialogue (from random selection)
     }
 
