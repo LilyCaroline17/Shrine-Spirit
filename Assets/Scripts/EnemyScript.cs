@@ -29,6 +29,7 @@ public class EnemyScript : MonoBehaviour
 
         isClicked = true;
         score++;
+        speed = speed + score;
         //Destroy(gameObject);
         //Instantiate(gameObject, spawnPos, transform.rotation);
         
@@ -56,7 +57,7 @@ public class EnemyScript : MonoBehaviour
         {
             randSpeed = Random.Range(speed - 10, speed + 10);
             leaveSpeed = 50.0f * Time.deltaTime;
-            if (reachedCenter) { leaveSpeed *= 4.0f; }
+            if (reachedCenter) { leaveSpeed *= 2.5f; }
 
             transform.position = Vector2.MoveTowards(transform.position, position, leaveSpeed);
             

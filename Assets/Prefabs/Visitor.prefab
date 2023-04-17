@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1606799277979545285}
   - component: {fileID: 1606799277979545286}
   - component: {fileID: -3610697590554234012}
+  - component: {fileID: 5961049055612787595}
+  - component: {fileID: 1811628139247654359}
   m_Layer: 0
   m_Name: Visitor
   m_TagString: Untagged
@@ -111,6 +113,8 @@ MonoBehaviour:
   - {fileID: 0}
   currentVisitor: {fileID: 0}
   animator: {fileID: 0}
+  trigger: {fileID: 0}
+  nextSentence: {fileID: 0}
 --- !u!114 &-3610697590554234012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +130,33 @@ MonoBehaviour:
   snapPoints:
   - {fileID: 1606799277979545284}
   snapRange: 40
+--- !u!114 &5961049055612787595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606799277979545287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ec9d38ee8674b36a90b2fbbe4b7ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    visitor: visitor
+    sentences:
+    - I am arriving
+    - I am leaving
+--- !u!114 &1811628139247654359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606799277979545287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc701ca5044c7489b8dd1c559aee4415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 0}

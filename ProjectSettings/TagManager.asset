@@ -8,6 +8,7 @@ TagManager:
   - MouseFollow
   - token
   - Animator
+  - Dialogue
   layers:
   - Default
   - TransparentFX
