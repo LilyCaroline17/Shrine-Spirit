@@ -108,9 +108,9 @@ MonoBehaviour:
   recievedToken: {fileID: 0}
   backgroundAnimator: {fileID: 0}
   visitors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2868452543756356665, guid: 9b93ed99322db40449020ca26b34c6fc, type: 3}
+  - {fileID: 5845592651488294837, guid: 09a5669d58e4b458881b16853ac2d6c2, type: 3}
+  - {fileID: 6561903057456100966, guid: 9c5f389851e0b4cf586a5d768caa2cc3, type: 3}
   currentVisitor: {fileID: 0}
   animator: {fileID: 0}
   trigger: {fileID: 0}

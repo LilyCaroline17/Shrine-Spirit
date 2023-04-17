@@ -24,9 +24,12 @@ public class VisitorScript : MonoBehaviour
         action = "going";
         VisitorSpawner = GameObject.FindGameObjectWithTag("spawner").GetComponent<PeopleSpawnerScript>();
         backgroundAnimator = GameObject.FindGameObjectWithTag("Animator");
+        
 
         int index = Random.Range(0, visitors.Length-1);
-        currentVisitor = visitors[index];
+        currentVisitor = Instantiate(visitors[index], transform.position, transform.rotation);
+
+        currentVisitor.transform.SetParent(transform);
         animator = currentVisitor.GetComponent<Animator>();
         trigger = GetComponent<DialogueTrigger>();
         trigger.TriggerDialogue(); //Dialogue should trigger as soon as visitor is created 
