@@ -14,6 +14,10 @@ public class VisitorScript : MonoBehaviour
     public DialogueTrigger trigger;
     public GameObject nextSentence;
 
+    public GameObject[] visitors;
+    public GameObject currentVisitor;
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,9 @@ public class VisitorScript : MonoBehaviour
         VisitorSpawner = GameObject.FindGameObjectWithTag("spawner").GetComponent<PeopleSpawnerScript>();
         backgroundAnimator = GameObject.FindGameObjectWithTag("Animator");
 
+        int index = Random.Range(0, visitors.Length-1);
+        currentVisitor = visitors[index];
+        animator = currentVisitor.GetComponent<Animator>();
         trigger = GetComponent<DialogueTrigger>();
         trigger.TriggerDialogue(); //Dialogue should trigger as soon as visitor is created 
     }
@@ -29,8 +36,15 @@ public class VisitorScript : MonoBehaviour
     void Update()
     {
         if (action.Equals("going")) Moving(false);
-        if (action.Equals("leaving")) Moving(true);
-        //if (action.Equals("praying"))
+        if (action.Equals("leaving"))
+        {
+            animator.SetTrigger("WalkAway");
+            Moving(true);
+        }
+        if (action.Equals("praying"))
+        {
+            animator.SetTrigger("Standing");
+        }
         // play animation of prayer, display dialogue (from random selection)
     }
 
