@@ -15,16 +15,13 @@ public class ScoreKeeper : MonoBehaviour
     public GameObject rock_spirit;
     public GameObject plant_ghost;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        score1 = bird_spirit.GetComponent<int>();
-        score2 = rock_spirit.GetComponent<int>();
-        score3 = plant_ghost.GetComponent<int>();
+        score1 = bird_spirit.GetComponent<EnemyScript>().score;
+        score2 = rock_spirit.GetComponent<EnemyScript>().score;
+        score3 = plant_ghost.GetComponent<EnemyScript>().score;
+
+        score = score1 + score2 + score3;
     }
 }
