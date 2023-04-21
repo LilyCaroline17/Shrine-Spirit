@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 1606799277979545287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3, y: -88.7, z: 0}
-  m_LocalScale: {x: 23.30243, y: 23.30243, z: 23.30243}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,14 +107,14 @@ MonoBehaviour:
   VisitorSpawner: {fileID: 0}
   recievedToken: {fileID: 0}
   backgroundAnimator: {fileID: 0}
+  trigger: {fileID: 0}
+  triggered: 0
   visitors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2868452543756356665, guid: 9b93ed99322db40449020ca26b34c6fc, type: 3}
+  - {fileID: 5845592651488294837, guid: 09a5669d58e4b458881b16853ac2d6c2, type: 3}
+  - {fileID: 6561903057456100966, guid: 9c5f389851e0b4cf586a5d768caa2cc3, type: 3}
   currentVisitor: {fileID: 0}
   animator: {fileID: 0}
-  trigger: {fileID: 0}
-  nextSentence: {fileID: 0}
 --- !u!114 &-3610697590554234012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,8 +145,9 @@ MonoBehaviour:
   dialogue:
     visitor: visitor
     sentences:
-    - I am arriving
-    - I am leaving
+    - I wish for love
+    - Oh thanks!
+  mangager: {fileID: 0}
 --- !u!114 &1811628139247654359
 MonoBehaviour:
   m_ObjectHideFlags: 0

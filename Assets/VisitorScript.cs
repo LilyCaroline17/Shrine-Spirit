@@ -12,7 +12,7 @@ public class VisitorScript : MonoBehaviour
     public GameObject recievedToken;
     public GameObject backgroundAnimator;
     public DialogueTrigger trigger;
-    public GameObject nextSentence;
+    public bool triggered = false;
 
     public GameObject[] visitors;
     public GameObject currentVisitor;
@@ -24,12 +24,14 @@ public class VisitorScript : MonoBehaviour
         action = "going";
         VisitorSpawner = GameObject.FindGameObjectWithTag("spawner").GetComponent<PeopleSpawnerScript>();
         backgroundAnimator = GameObject.FindGameObjectWithTag("Animator");
+        
 
         int index = Random.Range(0, visitors.Length-1);
-        currentVisitor = visitors[index];
+        currentVisitor = Instantiate(visitors[index], transform.position, transform.rotation);
+
+        currentVisitor.transform.SetParent(transform);
         animator = currentVisitor.GetComponent<Animator>();
         trigger = GetComponent<DialogueTrigger>();
-        trigger.TriggerDialogue(); //Dialogue should trigger as soon as visitor is created 
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class VisitorScript : MonoBehaviour
         if (action.Equals("praying"))
         {
             animator.SetTrigger("Standing");
+            trigger.TriggerDialogue();
         }
         // play animation of prayer, display dialogue (from random selection)
     }
@@ -55,8 +58,17 @@ public class VisitorScript : MonoBehaviour
             transform.position = transform.position + (Vector3.down * moveSpeed) * Time.deltaTime;
 
             //nextSentence = GetComponent<DialogueManager>();
-            nextSentence = GameObject.FindGameObjectWithTag("Dialogue");
-            nextSentence.GetComponent<DialogueManager>().DisplayNextSentence();
+            //nextSentence = GameObject.FindGameObjectWithTag("Dialogue");
+            //nextSentence.GetComponent<DialogueManager>().DisplayNextSentence();
+            if (!triggered)
+            {
+                trigger.NextSentence();
+                triggered = true;
+            }
+            if(transform.position.y < -40)
+            {
+                trigger.NextSentence();
+            }
 
 
             if (transform.position.y < deadZone)
