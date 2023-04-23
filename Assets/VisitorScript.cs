@@ -26,12 +26,13 @@ public class VisitorScript : MonoBehaviour
         backgroundAnimator = GameObject.FindGameObjectWithTag("Animator");
         
 
-        int index = Random.Range(0, visitors.Length-1);
+        int index = Random.Range(0, visitors.Length);
+        Debug.Log(index);
         currentVisitor = Instantiate(visitors[index], transform.position, transform.rotation);
 
         currentVisitor.transform.SetParent(transform);
         animator = currentVisitor.GetComponent<Animator>();
-        trigger = GetComponent<DialogueTrigger>();
+        trigger = currentVisitor.GetComponent<DialogueTrigger>();
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class VisitorScript : MonoBehaviour
         }
         if (action.Equals("praying"))
         {
-            animator.SetTrigger("Standing");
+            animator.SetTrigger("Standing"); 
             trigger.TriggerDialogue();
         }
         // play animation of prayer, display dialogue (from random selection)
