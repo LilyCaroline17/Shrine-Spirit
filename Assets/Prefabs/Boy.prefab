@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 7336518566151165512}
   - component: {fileID: 4568424156408428611}
   - component: {fileID: 3812346571453682255}
+  - component: {fileID: 7434762189065447068}
   m_Layer: 0
   m_Name: Boy
   m_TagString: Untagged
@@ -279,8 +280,8 @@ Transform:
   m_GameObject: {fileID: 6561903057456100966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7490470415657140624}
   - {fileID: 3931943628584962316}
@@ -361,6 +362,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &7434762189065447068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6561903057456100966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ec9d38ee8674b36a90b2fbbe4b7ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    visitor: Boy
+    sentences:
+    - I wish for love
+  mangager: {fileID: 0}
 --- !u!1 &8430878944518118655
 GameObject:
   m_ObjectHideFlags: 0

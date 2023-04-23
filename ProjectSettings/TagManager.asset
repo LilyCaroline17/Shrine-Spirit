@@ -9,6 +9,7 @@ TagManager:
   - token
   - Animator
   - Dialogue
+  - visitor
   layers:
   - Default
   - TransparentFX
