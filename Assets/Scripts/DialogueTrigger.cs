@@ -5,18 +5,24 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public GameObject wanted;
     public DialogueManager mangager;
 
     public void Start()
     {
         mangager = GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueManager>();
+        string[] lines = { "I wish to meet the love of my life", "I want to ace my written exam", "I hope to find my missing cat", "I wish to go to the festival, but I have chores" };
+        //GameObject[] token = { };
+        int index = Random.Range(0, lines.Length);
+        dialogue.sentences[0] = lines[index];
+        wanted = token[index];
     }
     public void TriggerDialogue()
     {
-        if (mangager == null)
-        {
-            mangager = GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueManager>();
-        }
+        //if (mangager == null)
+        //{
+        //    mangager = GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueManager>();
+        //}
         mangager.StartDialogue(dialogue);
         //Debug.Log(FindObjectOfType<DialogueManager>().dialogueText!=null);
         //Debug.Log("------------");
