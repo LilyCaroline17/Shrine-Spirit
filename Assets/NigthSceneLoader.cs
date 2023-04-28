@@ -7,6 +7,12 @@ public class NigthSceneLoader : MonoBehaviour
 {
     private float timer = 0;
     public float daytimelength = 20;
+    public static int numOfDays;
+
+    private void Start()
+    {
+        numOfDays++;
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +29,7 @@ public class NigthSceneLoader : MonoBehaviour
     public void LoadDayScene()
     {
         //want to have the spirits stop/disappear ouside
-        SceneManager.LoadScene(0);
+        if (numOfDays >2) SceneManager.LoadScene(3);
+        else SceneManager.LoadScene(0);
     }
 }
