@@ -29,7 +29,7 @@ public class NigthSceneLoader : MonoBehaviour
     public void LoadDayScene()
     {
         //want to have the spirits stop/disappear ouside
-        if (numOfDays >2) SceneManager.LoadScene(3);
+        if (numOfDays >= 1) SceneManager.LoadScene(3);
         else SceneManager.LoadScene(0);
     }
 }

@@ -63,6 +63,9 @@ public class VisitorScript : MonoBehaviour
             //nextSentence.GetComponent<DialogueManager>().DisplayNextSentence();
             if (!triggered)
             {
+                print(recievedToken.name.Substring(0, 10));
+                if (recievedToken.name.Substring(0, 10).Equals(trigger.wanted)) trigger.mangager.sentences.Enqueue("Oh thank you for the gift!");
+                else trigger.mangager.sentences.Enqueue("Oh thanks ... ");
                 trigger.NextSentence();
                 triggered = true;
             }
