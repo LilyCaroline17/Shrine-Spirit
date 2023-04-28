@@ -5,14 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderScript : MonoBehaviour
 {
-    //public GameObject morning_background;
-    //public GameObject afternoon_background;
-    //public float daytimelength = 10;
-    //private float timer = 0;
-    //public bool isMorning = true;
 
     public int numOfVisitors;
-
+    
     Animator animator;
 
     void Start()
@@ -23,13 +18,6 @@ public class SceneLoaderScript : MonoBehaviour
 
     public void Update()
     {
-        //if (timer < daytimelength)
-        //{ timer += Time.deltaTime; }
-        //else
-        //{
-        //    ChangeBackground();
-        //    timer = 0;
-        //}
         animator.SetInteger("NumberOfVisitors",numOfVisitors);
     }
 

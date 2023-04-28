@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
-    public GameObject wanted;
+    //public GameObject wanted;
     public DialogueManager mangager;
 
     public void Start()
@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
         //GameObject[] token = { };
         int index = Random.Range(0, lines.Length);
         dialogue.sentences[0] = lines[index];
-        wanted = token[index];
+        //wanted = token[index];
     }
     public void TriggerDialogue()
     {
