@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshPro dialogueText;
     public Animator animator;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     // Start is called before the first frame update
     void Start()
@@ -46,18 +46,18 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
-            Debug.Log("ended");
+            //Debug.Log("ended");
             return;
         }
 
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        //Debug.Log(sentence);
         dialogueText.text = sentence;
     }
 
     void EndDialogue()
     {
-        Debug.Log("end of conversation");
+        //Debug.Log("end of conversation");
 
         animator.SetBool("talking", false);
     }
