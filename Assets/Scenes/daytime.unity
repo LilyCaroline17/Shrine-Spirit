@@ -462,7 +462,7 @@ MonoBehaviour:
   xMin: 0
   xMax: 0
   yMin: -15
-  yMax: 15
+  yMax: 13
 --- !u!1 &911216044
 GameObject:
   m_ObjectHideFlags: 0
